@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+
+*{
+    transition: all 0.3s;
+}
+
+:root{
+    --padding-container: 50px 0;
+    --color-title: #000000d8;
+}
+
+body{
+        font-family: "Merriweather", serif;
+        font-weight: 400;
+        font-style: normal;
+        background-image: url(../images/tipo\ c.jpg);
+        background-size: cover;
+}
+
+.container{
+    width: auto;
+    max-width: 2000px;
+    margin: 0px;
+    overflow: hidden;
+    padding: var(--padding-container);
+    background-color: rgba(145, 114, 80, 0.544);
+}
+
+.container_t{
+    width: auto;
+    max-width: 2000px;
+    max-height: 800px;
+    margin: 0px;
+    overflow: hidden;
+    padding: var(--padding-container);
+    background-color: rgba(132, 115, 54, 0.544); 
+}
+
+.hero{
+    width: auto;
+    height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    color: black;
+}
+
+
+body, html {
+    margin: 0;
+    height: 100%;
+}
+
+.image-container {
+    position: absolute;
+            top: 80px;  /* Ajusta este valor según necesites */
+            right: 0;
+            bottom: 0;
+            width: auto;
+            z-index: -1;
+}
+
+.image-container img {
+    height: calc(100% - 0px);  /* Ajusta este valor para restar la distancia desde el top */
+    width: auto; /* Mantener proporción */
+}
+
+.nav{
+    --padding-container:0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav_title{
+    font-weight: 300;
+    margin-left: 35px;
+}
+
+.nav_link{
+    margin-left: auto;
+    margin-right: 55px;
+    padding: 0;   
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 3.5em;
+}
+
+.nav_link > li:hover{
+    background-color: rgba(224, 218, 153, 0.764);
+    height: 50px;
+}
+
+.nav_items{
+    list-style: none;
+}
+
+.nav_vertical{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(0,0,0,.5);
+}
+
+.nav_link li:hover .nav_vertical{
+    display: block;
+}
+
+.nav_vertical li:hover{
+    background-color: black;
+}
+
+.nav_vertical li a{
+    display: block;
+    color: white;
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
+}
+
+.nav_links{
+    color:black;
+    text-decoration: none;
+}
+
+.nav_menu{
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+}
+
+.morph{
+    width: 70%;
+    height: 25vh;
+    position: relative;
+    left: 40px;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    color: black;
+    text-justify: auto;
+}
+
+.morph_title{
+    font-size: 250%;
+}
+
+
+.subtitle{
+    color: var(--color-title);
+    font-size: 180%;
+}
+
+.testimony{
+    background-color: white;
+}
+
+.testimony_container{
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    gap: 7em;
+    align-items: center;
+}
+
+.testimony_body{
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    grid-column: 2/2;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.testimony_body--show{
+    pointer-events: unset;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.testimony_source{
+    background-color: rgba(29, 100, 37, 0.399);
+    color: white;
+    display: inline-block;
+    padding: 5px;
+}
+
+.testimony_img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 15%;
+}
+
+.testimony_imgn{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 60% 40%;
+}
+
+.testimony_text{
+    max-width: 900px;
+    margin-left: 5%;
+}
+
+.paragraph{
+    font-size: 120%;
+}
+
+.testimony_arrow{
+    width: 90%;
+    cursor: pointer;
+    margin-left: 30%;
+}
+
+.testimony_arrow2{
+    width: 90%;
+    cursor: pointer;
+    margin-right: 30%;
+}

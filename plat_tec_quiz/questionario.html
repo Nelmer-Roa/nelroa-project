@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.1/dist/sweetalert2.all.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Cuestionario</title>
+</head>
+<body>
+    <header class="hero"> 
+        <nav class="nav container">
+            <div class="nav_logo">
+                <h2 class="nav_title">Práctica Final.</h2>
+            </div>
+           
+        </nav>
+        <h1 class="title">Cuestionario</h1>
+    <style>
+        *{
+            transition: all 0.3s;
+        }
+        a{
+            display: ruby-base;
+            width: 120px;
+            height: 50px;
+            font-family: 700;
+            border-radius: 20px;
+            padding: auto;
+            background-color: darkviolet;
+            color: white;
+        }
+        body{
+            lighting-color: white;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        .contenedor{
+            width: 98vw;
+            height: 97vh;
+            margin-top: 75px;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: top;
+            align-items: center;
+        }
+        .encabezado{
+            background-color:rgb(166, 141, 41, 0.8);
+            min-width: 300px;
+            width: 70%;
+            padding: 10px;
+        }
+        .puntaje{
+            opacity: 0.3;
+            text-align: right;
+        }
+        .btn{
+             background-color:rgba(220, 138, 62, 0.693);
+             width: 60%;
+             padding: 10px;
+             margin: 5px;
+        }
+        .btn:hover{
+            background-color: rgba(106, 67, 30, 0.693);
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+        
+    </style>
+    <div class="contenedor">
+        <div class="encabezado">
+            <div class="puntaje" id="puntaje">
+                puntaje:0/10
+            </div>
+            <div class="pregunta" id ="pregunta">
+                pregunta
+            </div>
+        </div>
+        <div class="btn" id="btn1" onclick="oprimirbtn(0)">
+            opcion 1
+        </div>
+        <div class="btn" id="btn2" onclick="oprimirbtn(1)">
+            opcion 2
+        </div>
+        <div class="btn" id="btn3" onclick="oprimirbtn(2)">
+            opcion 3
+        </div>
+        <div class="btn" id="btn4" onclick="oprimirbtn(3)">
+            opcion 4
+        </div>
+    </div>
+</header>
+<script>
+   let estructura_preguntas = readText("estructura_preguntas.json")
+let interprete_bd = JSON.parse(estructura_preguntas)
+let pregunta
+let posibles_respuestas = true;
+let puntaje = 0;
+let control = 0;
+let btncorrespondiente = [
+    select_id("btn1"),
+    select_id("btn2"),
+    select_id("btn3"),
+    select_id("btn4")
+]
+escogerpreguntas();
+function escogerpreguntas() {
+    if (control <= 9) {
+        pregunta = interprete_bd[control]
+        select_id("pregunta").innerHTML = pregunta.pregunta
+        select_id("puntaje").innerHTML = puntaje + "/10"
+        desordenarrespuestas(pregunta)
+    }else{
+        select_id("puntaje").innerHTML = puntaje + "/10"
+        volver();
+    }
+}
+function desordenarrespuestas(pregunta) {
+    posibles_respuestas = [
+        pregunta.respuesta,
+        pregunta.incorrecta1,
+        pregunta.incorrecta2,
+        pregunta.incorrecta3
+    ]
+    posibles_respuestas.sort(() => Math.random() - 0.5)
+
+    select_id("btn1").innerHTML = posibles_respuestas[0]
+    select_id("btn2").innerHTML = posibles_respuestas[1]
+    select_id("btn3").innerHTML = posibles_respuestas[2]
+    select_id("btn4").innerHTML = posibles_respuestas[3]
+}
+function volver() {
+    let usuario = prompt('digite su nombre');
+    select_id("puntaje").innerHTML = puntaje + "/10"
+    fetch('conexion.php',{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'NOM=' + encodeURIComponent(usuario) + '&PUNT=' + encodeURIComponent(puntaje),
+    })
+    alert('QUESTIONARIO FINALIZADO SU PUNTUACION ES DE : '+puntaje+'/10');
+    window.location.href = 'puntaje.html';
+}
+function oprimirbtn(i) {
+    if (control <= 9) {
+        if (posibles_respuestas[i] == pregunta.respuesta) {
+            btncorrespondiente[i].style.background = "green"
+            puntaje++;
+        } else {
+            btncorrespondiente[i].style.background = "red"
+        }
+        setTimeout(() => {
+            control++;
+            reiniciarbtn()
+        }, 500);
+    }
+}
+function reiniciarbtn() {
+    for (const btn of btncorrespondiente) {
+        btn.style.background = "rgba(220, 138, 62, 0.693)"
+    }
+    escogerpreguntas()
+}
+
+function ShowHide() {
+    var volver = document.getElementById("volver")[0];
+    volver.style.visibility = "vivible"
+}
+
+function select_id(id) {
+    return document.getElementById(id)
+}
+
+function style(ruta_local) {
+    return select_id(id).style
+}
+
+function readText(ruta_local) {
+    var texto = null;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", ruta_local, false);
+    xmlhttp.send();
+    if (xmlhttp.status == 200) {
+        texto = xmlhttp.responseText;
+    }
+    return texto;
+}    
+</script>
+</body>
+</html>

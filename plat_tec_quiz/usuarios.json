@@ -1,0 +1,18 @@
+[
+    {
+        "usuario":"samuel",
+        "puntaje":"8/10"
+    },
+    {
+        "usuario":"nelmer",
+        "puntaje":"7/10"
+    },
+    {
+        "usuario":"prueba",
+        "puntaje":"5/10"
+    },
+    {
+        "usuario":"test",
+        "puntaje":"0/10"
+    }
+]

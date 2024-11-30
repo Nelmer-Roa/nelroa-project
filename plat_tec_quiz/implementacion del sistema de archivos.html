@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.1/dist/sweetalert2.all.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/estilosem.css">
+    <title>Implementación del sistema de archivos</del></title>
+</head>
+<body>
+    <header class="hero"> 
+        <nav class="nav container">
+            <div class="nav_logo">
+                <h2 class="nav_title">Práctica Final.</h2>
+            </div>
+            <ul class="nav_link nav_link--menu">
+                <li class="nav_items">
+                    <a href="inicio.html" class="nav_links">Inicio</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#" class="nav_links">Menú</a>
+                    <ul class="nav_vertical">
+                        <li>
+                            <a href="estructura de almacenamiento masivo.html">Estructura de almacenamiento masivo</a>
+                        </li>
+                        <li>
+                            <a href="interfaz del sistema de archivos.html">Interfaz del sistema de archivos</a>
+                        </li>
+                        <li>
+                            <a href="sistemas de entrada & salida.html">Sistemas de Entrada/Salida</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav_items">
+                    <a href="#" class="nav_links">Referencias</a>
+                </li>
+
+        </ul>
+
+         <div class="nav_menu">
+                
+         </div>
+        </nav>
+
+        <h1 class="title">Implementación del sistema de archivos</h1>
+       <div class="body_a">
+        La implementación de un sistema de archivos es una parte esencial de los sistemas operativos modernos, ya que permite la 
+        organización, almacenamiento, acceso y manipulación de los datos en dispositivos de almacenamiento permanente como discos 
+        duros, SSDs y otros medios. Un sistema de archivos proporciona una estructura jerárquica que facilita la gestión de los datos 
+        y permite que los usuarios y las aplicaciones interactúen con los archivos de manera eficiente.
+        <p>El primer paso en la implementación de un sistema de archivos es la creación de una estructura lógica sobre el dispositivo 
+        físico. Esto se inicia con el formateo del disco, que implica la división del disco en sectores y la creación de estructuras 
+        básicas como el bloque de arranque, que contiene información crucial para iniciar el sistema de archivos, y la tabla de 
+        particiones, que define las divisiones del disco.
+        </p>
+        <p>Una vez formateado el disco, se establece una estructura de directorios que organiza los archivos en una jerarquía. 
+        Esta estructura de directorios permite a los usuarios navegar y gestionar sus archivos de manera intuitiva. 
+        Los directorios pueden contener archivos y otros subdirectorios, formando un árbol de directorios. Los sistemas de archivos 
+        modernos permiten nombres de archivos largos, caracteres especiales y una estructura de permisos para controlar el acceso a 
+        los archivos y directorios.</p>
+        <p>Cada archivo y directorio en un sistema de archivos tiene un descriptor o inodo (en sistemas como UNIX). Los inodos 
+        contienen metadatos sobre los archivos, como el tamaño, la fecha de creación, la fecha de modificación, los permisos y los 
+        punteros a los bloques de datos donde realmente se almacena el contenido del archivo. Los inodos son fundamentales para la 
+        gestión de archivos, ya que permiten al sistema de archivos localizar rápidamente la información necesaria para acceder a un 
+        archivo.</p>
+        <p>La gestión del espacio en disco es otro aspecto crítico. Los sistemas de archivos utilizan diferentes métodos para asignar 
+        espacio en el disco a los archivos. Algunos métodos comunes incluyen la asignación contigua, donde un archivo ocupa bloques 
+        consecutivos en el disco; la asignación enlazada, donde los bloques de un archivo están enlazados en una lista; y la 
+        asignación indexada, donde los punteros a los bloques de datos se almacenan en una estructura de índice (como los inodos en UNIX).</p>
+        <p>La fragmentación es un problema que puede surgir cuando los archivos se dividen en bloques no contiguos, lo que puede degradar 
+        el rendimiento del sistema de archivos. Para mitigar este problema, algunos sistemas de archivos implementan técnicas de 
+        desfragmentación que reorganizan los bloques de datos para que sean contiguos. Sin embargo, los sistemas modernos como ext4 en 
+        Linux y NTFS en Windows tienen mecanismos para minimizar la fragmentación durante la asignación de archivos.</p>
+        <p>La caché del sistema de archivos es una técnica utilizada para mejorar el rendimiento. El sistema operativo mantiene una 
+        caché de los bloques de disco más frecuentemente utilizados en la memoria principal, lo que reduce la necesidad de acceder al 
+        disco para leer o escribir datos. Esta caché puede ser gestionada mediante políticas de reemplazo, como LRU (Least Recently 
+        Used), para determinar qué bloques se mantienen en la caché y cuáles se descartan.</p>
+        <p>La integridad y recuperación de datos son aspectos cruciales en la implementación de sistemas de archivos. Los sistemas de 
+        archivos deben ser robustos frente a fallos de hardware y cortes de energía. Para ello, muchos sistemas utilizan técnicas como 
+        journaling, donde todas las operaciones de escritura se registran en un diario antes de ser aplicadas al sistema de archivos 
+        principal. En caso de un fallo, el sistema puede usar el diario para recuperar el estado consistente del sistema de archivos.</p>
+        <p>La seguridad y los permisos de acceso son esenciales para proteger los datos almacenados. Los sistemas de archivos 
+        implementan permisos que definen quién puede leer, escribir o ejecutar un archivo. Estos permisos pueden ser gestionados 
+        mediante listas de control de acceso (ACLs) que permiten definir permisos más granulares para diferentes usuarios y grupos.</p>
+        <p>En términos de compatibilidad y portabilidad, los sistemas de archivos deben ser capaces de interactuar con otros sistemas 
+        operativos y dispositivos. Esto implica soportar múltiples sistemas de archivos, como FAT32, NTFS, ext4, y otros, y 
+        proporcionar herramientas para la conversión y transferencia de datos entre estos sistemas.</p>
+        <p>Finalmente, la evolución y el mantenimiento de un sistema de archivos son continuos. Con el avance de la tecnología de 
+        almacenamiento y las crecientes demandas de los usuarios, los sistemas de archivos deben actualizarse y mejorarse para soportar 
+        nuevas características y mejorar el rendimiento y la seguridad. Esto incluye la integración de nuevas tecnologías como el 
+        almacenamiento en la nube y el soporte para grandes volúmenes de datos y altas tasas de acceso concurrente.</p>
+        <p>En resumen, la implementación de un sistema de archivos es un proceso complejo que involucra la creación de estructuras 
+        lógicas, la gestión eficiente del espacio de almacenamiento, la mejora del rendimiento mediante cachés y técnicas de 
+        desfragmentación, la aseguración de la integridad y recuperación de datos, y la provisión de mecanismos de seguridad y permisos.
+        Estos sistemas son fundamentales para el funcionamiento eficiente y seguro de los sistemas informáticos modernos, permitiendo a 
+        los usuarios almacenar y acceder a sus datos de manera organizada y protegida.</p>
+       </div>
+    </header>
+</body>
+</html>

@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+
+*{
+    transition: all 0.3s;
+}
+
+:root{
+    --padding-container: 50px 0;
+    --color-title: #000000d8;
+}
+
+body{
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+    background: rgba(255, 255, 255, 0.2);
+    background-image: url(../images/tipo\ c.jpg);
+    background-size: cover;
+    background-repeat: repeat;
+    background-blend-mode: screen;
+}
+
+.container{
+    width: auto;
+    max-width: 2000px;
+    margin: 0px;
+    overflow: hidden;
+    padding: var(--padding-container);
+    background-color: rgba(145, 114, 80, 0.605);
+}
+
+.hero{
+    width: auto;
+    height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    color: black;
+}
+
+body, html {
+    margin: 0;
+    height: 100%;
+}
+
+.nav{
+    --padding-container:0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav_title{
+    font-weight: 300;
+    margin-left: 35px;
+}
+
+.nav_link{
+    margin-left: auto;
+    margin-right: 60px;
+    padding: 0;   
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 3em;
+}
+
+.nav_link > li:hover{
+    background-color: rgba(224, 218, 153, 0.764);
+    height: 50px;
+}
+
+.nav_items{
+    list-style: none;
+}
+
+.nav_vertical{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(0,0,0,.5);
+}
+
+.nav_link li:hover .nav_vertical{
+    display: block;
+}
+
+.nav_vertical li:hover{
+    background-color: black;
+}
+
+.nav_vertical li a{
+    display: block;
+    color: white;
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
+}
+
+.nav_links{
+    color:black;
+    text-decoration: none;
+}
+
+.nav_menu{
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+}
+
+.title{
+    text-align: center;
+    font-size: 270%;
+}
+
+.body_a{
+    margin: 50px;
+    margin-top: 0px;
+    text-align: justify;
+    font-size: 130%;
+}
+
+.body_img{
+    width: 650px;
+    height: 350px;
+    margin: 15px 15px 15px 405px;
+}
+
+.body_imag{
+    width: 400px;
+    height: 250px;
+    margin: 15px 15px 15px 560px;
+}
+
+.body_imeg{
+    float: right; 
+    width: 650px;
+    height: 350px;
+    margin: 13px 13px 13px 70px;
+}

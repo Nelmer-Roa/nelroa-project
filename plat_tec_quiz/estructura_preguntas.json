@@ -1,0 +1,72 @@
+[
+    {
+        "pregunta":"¿Qué es el almacenamiento masivo?",
+        "respuesta":"Es la tecnología y sistemas que permiten guardar grandes cantidades de datos en un formato digital .",
+        "incorrecta1":"Es una pequeña cantidad de almacenamiento de datos.",
+        "incorrecta2":"Es un tipo de almacenamiento solo para fotos y videos.",
+        "incorrecta3":"Es un almacenamiento exclusivamente físico."
+    },
+    {
+        "pregunta":"¿Qué tipos de dispositivos físicos se utilizan en el hardware de almacenamiento?",
+        "respuesta":"Discos duros, unidades de estado sólido (SSD), cintas magnéticas y sistemas de almacenamiento de red como NAS y SAN .",
+        "incorrecta1":"Sólo discos duros y cintas magnéticas.",
+        "incorrecta2":"Sólo SSD y NAS.",
+        "incorrecta3":"Sólo SAN y discos duros."
+    },
+    {
+        "pregunta":"¿Qué función tienen los sistemas de gestión de almacenamiento?",
+        "respuesta":"Manejan la organización y acceso a los datos almacenados .",
+        "incorrecta1":"Se encargan solo de la conectividad de red.",
+        "incorrecta2":"Se usan solo para crear redes de almacenamiento.",
+        "incorrecta3":"Solo gestionan el hardware físico."
+    },
+    {
+        "pregunta":"¿Qué importancia tiene la infraestructura de red en el almacenamiento masivo?",
+        "respuesta":"Es crucial para el acceso rápido y fiable a los datos .",
+        "incorrecta1":"No tiene importancia.",
+        "incorrecta2":"Es menos importante que el hardware de almacenamiento.",
+        "incorrecta3":"Solo es importante para la seguridad de los datos."
+    },
+    {
+        "pregunta":"¿Cuál es una característica del almacenamiento directo (DAS)?",
+        "respuesta":"Está conectado directamente a un servidor o estación de trabajo .",
+        "incorrecta1":"Es una red especializada que conecta servidores.",
+        "incorrecta2":"Proporciona almacenamiento a través de internet.",
+        "incorrecta3":"Permite compartir el almacenamiento a través de una red."
+    },
+    {
+        "pregunta":"¿Para qué es ideal el almacenamiento conectado en red (NAS)?",
+        "respuesta":"Para compartir archivos entre múltiples usuarios .",
+        "incorrecta1":"Para uso exclusivo en servidores individuales.",
+        "incorrecta2":"Para almacenamiento solo a nivel de bloque.",
+        "incorrecta3":"Para uso exclusivo de aplicaciones críticas de negocio."
+    },
+    {
+        "pregunta":"¿Qué es una red de área de almacenamiento (SAN)?",
+        "respuesta":"Una red especializada que conecta servidores a dispositivos de almacenamiento a nivel de bloque .",
+        "incorrecta1":"Un tipo de almacenamiento conectado directamente a un servidor.",
+        "incorrecta2":"Una forma de almacenamiento proporcionado a través de internet.",
+        "incorrecta3":"Un sistema para compartir archivos en una red."
+    },
+    {
+        "pregunta":"¿Qué ventaja ofrece el almacenamiento en la nube?",
+        "respuesta":"Ofrece flexibilidad y escalabilidad casi ilimitada .",
+        "incorrecta1":"Es siempre más rápido que otras formas de almacenamiento.",
+        "incorrecta2":"Es menos seguro que otros tipos de almacenamiento.",
+        "incorrecta3":"No permite pagar solo por lo que se usa."
+    },
+    {
+        "pregunta":"¿Cuál es la limitación del almacenamiento directo (DAS)?",
+        "respuesta":"No es escalable para grandes organizaciones .",
+        "incorrecta1":"No se puede conectar a servidores.",
+        "incorrecta2":"No se puede utilizar en estaciones de trabajo.",
+        "incorrecta3":"No es eficiente para ninguna aplicación."
+    },
+    {
+        "pregunta":"¿Cuál es una ventaja de la red de área de almacenamiento (SAN)?",
+        "respuesta":"Ofrece alto rendimiento, adecuado para aplicaciones críticas de negocio .",
+        "incorrecta1":"Es más lento que el almacenamiento directo (DAS).",
+        "incorrecta2":"No es escalable.",
+        "incorrecta3":"No es adecuado para aplicaciones críticas de negocio."
+    }
+]
